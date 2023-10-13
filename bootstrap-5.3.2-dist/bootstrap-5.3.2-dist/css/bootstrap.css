@@ -1138,7 +1138,7 @@ progress {
 
   .col-sm-2 {
     flex: 0 0 auto;
-    width: 300px;
+    width: 250px;
   }
 
   .col-sm-3 {
@@ -1178,7 +1178,7 @@ progress {
 
   .col-sm-10 {
     flex: 0 0 auto;
-    width: calc(100% - 300px);
+    width: calc(100% - 250px);
   }
 
   .col-sm-11 {
