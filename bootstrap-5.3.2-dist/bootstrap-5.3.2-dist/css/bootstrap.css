@@ -1352,7 +1352,7 @@ progress {
 
   .col-md-2 {
     flex: 0 0 auto;
-    width: 16.66666667%;
+    width: 250px;
   }
 
   .col-md-3 {
@@ -1392,7 +1392,7 @@ progress {
 
   .col-md-10 {
     flex: 0 0 auto;
-    width: 83.33333333%;
+    width: calc(100% - 250px);
   }
 
   .col-md-11 {
@@ -1566,7 +1566,7 @@ progress {
 
   .col-lg-2 {
     flex: 0 0 auto;
-    width: 16.66666667%;
+    width: 250px;
   }
 
   .col-lg-3 {
@@ -1606,7 +1606,7 @@ progress {
 
   .col-lg-10 {
     flex: 0 0 auto;
-    width: 83.33333333%;
+    width: calc(100% - 250px);
   }
 
   .col-lg-11 {
@@ -4268,7 +4268,7 @@ fieldset:disabled .btn {
   width: auto;
 }
 
-@media only screen and (min-width : 980px) {
+@media (min-width : 980px) {
   .btn-group {
     border-radius: var(--bs-border-radius);
   }
@@ -4293,7 +4293,7 @@ fieldset:disabled .btn {
   }
 }
 
-@media only screen and (max-width : 979px) {
+@media (max-width : 979px) {
   .btn-group {
     flex-direction: column;
     align-items: flex-start;
@@ -13958,7 +13958,7 @@ fieldset:disabled .btn {
 
 /*# sourceMappingURL=bootstrap.css.map */
 
-@media only screen and (min-width: 1100px){
+@media (min-width: 1100px){
 .center-middle{
   width: max(1000px);
   margin: auto;
