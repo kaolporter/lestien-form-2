@@ -13,7 +13,7 @@
 
         <h1 class="lh-lg">Newsletter Preferences</h1>
 
-        <form class="row" method="get">
+        <form class="row" method="post" id="newsletter-form">
             <div class="row mb-3 mt-4 fs-5">
                 <div class="col-lg-2 col-med-2 col-sm-2">
                     <label class="col-form-label">Email Address</label>
@@ -67,7 +67,7 @@
                         <label class="btn btn-outline-primary" for="forHer">For Her</label>
 
                         <input type="radio" class="btn-check" name="preference" id="both" value="both"
-                            autocomplete="off">
+                            autocomplete="off" checked>
                         <label class="btn btn-outline-primary" for="both">Both</label>
                     </div>
                 </div>
@@ -86,14 +86,15 @@
         </form>
     </div>
     <script>
-        document.addEventListener('DOMContentLoaded', function(event) {
+        document.addEventListener('DOMContentLoaded', function (event) {
             function fill(x, y) {
                 if (document.getElementById(y) != null) {
                     document.getElementById(y).value = x
                 } else {
                     const radio = document.getElementById(x);
-                    if(radio != null){
-                    radio.checked = true;
+                    if (radio != null) {
+                        document.getElementById("both").checked = false;
+                        radio.checked = true;
                     }
 
                 }
