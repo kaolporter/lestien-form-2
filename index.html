@@ -13,13 +13,13 @@
 
         <h1 class="lh-lg">Newsletter Preferences</h1>
 
-        <form class="row">
+        <form class="row" method="get">
             <div class="row mb-3 mt-4 fs-5">
                 <div class="col-lg-2 col-med-2 col-sm-2">
                     <label class="col-form-label">Email Address</label>
                 </div>
                 <div class="col-lg-10 col-md-10 col-sm-10">
-                    <input type="email" id="email" class="form-control">
+                    <input type="email" id="email" name="email" class="form-control">
                 </div>
 
             </div>
@@ -29,7 +29,7 @@
                     <label class="col-form-label">First Name</label>
                 </div>
                 <div class="col-lg-10 col-md-10 col-sm-10">
-                    <input type="text" id="firstName" class="form-control" required>
+                    <input type="text" id="firstName" name="firstName" class="form-control" required>
                 </div>
             </div>
 
@@ -38,7 +38,7 @@
                     <label class="col-form-label">Last Name</label>
                 </div>
                 <div class="col-lg-10 col-md-10 col-sm-10">
-                    <input type="text" id="lastName" class="form-control">
+                    <input type="text" id="lastName" name="lastName" class="form-control">
                 </div>
             </div>
 
@@ -47,7 +47,7 @@
                     <label class="col-form-label">Mobile Number</label>
                 </div>
                 <div class="col-lg-10 col-md-10 col-sm-10">
-                    <input type="text" id="mobileNumber" class="form-control">
+                    <input type="text" id="mobileNumber" name="mobileNumber" class="form-control">
                 </div>
             </div>
 
@@ -58,13 +58,13 @@
                 <div class="col-lg-10 col-md-10 col-sm-10">
                     <div class="btn-group d-flex" role="group" aria-label="Basic radio toggle button group"
                         id="radiobuttons">
-                        <input type="radio" class="btn-check" name="btnradio" id="forHim" autocomplete="off">
+                        <input type="radio" class="btn-check" name="preference" id="forHim" autocomplete="off">
                         <label class="btn btn-outline-primary" for="forHim">For Him</label>
 
-                        <input type="radio" class="btn-check" name="btnradio" id="forHer" autocomplete="off">
+                        <input type="radio" class="btn-check" name="preference" id="forHer" autocomplete="off">
                         <label class="btn btn-outline-primary" for="forHer">For Her</label>
 
-                        <input type="radio" class="btn-check" name="btnradio" id="both" autocomplete="off" checked>
+                        <input type="radio" class="btn-check" name="preference" id="both" autocomplete="off" checked>
                         <label class="btn btn-outline-primary" for="both">Both</label>
                     </div>
                 </div>
@@ -73,10 +73,22 @@
             <div class="text-center mt-5">
                 <button type="submit" class="btn btn-primary fs-5">Submit</button>
             </div>
+            <div class="row mb-3 mt-3 fs-5">
+                <div class="col-lg-2 col-med-2 col-sm-2">
+                    <label class="col-form-label">Unsubscribe</label>
+                    <input type="checkbox" id="unsubscribe">
+                </div>
+            </div>
 
         </form>
     </div>
-
+    <script>
+        const hash = window.location.search;
+        const url = window.location + hash;
+        console.log(url);
+        (new URL(url)).searchParams.forEach((x, y) =>
+            document.getElementById(y).value = x);
+    </script>
 
 </body>
 

@@ -13958,9 +13958,9 @@ fieldset:disabled .btn {
 
 /*# sourceMappingURL=bootstrap.css.map */
 
-@media (min-width: 1100px){
+@media (min-width: 1000px){
 .center-middle{
-  width: max(1000px);
+  width: max(900px);
   margin: auto;
 }
 }
