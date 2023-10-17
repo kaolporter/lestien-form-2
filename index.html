@@ -58,13 +58,16 @@
                 <div class="col-lg-10 col-md-10 col-sm-10">
                     <div class="btn-group d-flex" role="group" aria-label="Basic radio toggle button group"
                         id="radiobuttons">
-                        <input type="radio" class="btn-check" name="preference" id="forHim" autocomplete="off">
+                        <input type="radio" class="btn-check" name="preference" id="forHim" value="forHim"
+                            autocomplete="off">
                         <label class="btn btn-outline-primary" for="forHim">For Him</label>
 
-                        <input type="radio" class="btn-check" name="preference" id="forHer" autocomplete="off">
+                        <input type="radio" class="btn-check" name="preference" id="forHer" value="forHer"
+                            autocomplete="off">
                         <label class="btn btn-outline-primary" for="forHer">For Her</label>
 
-                        <input type="radio" class="btn-check" name="preference" id="both" autocomplete="off" checked>
+                        <input type="radio" class="btn-check" name="preference" id="both" value="both"
+                            autocomplete="off">
                         <label class="btn btn-outline-primary" for="both">Both</label>
                     </div>
                 </div>
@@ -83,11 +86,26 @@
         </form>
     </div>
     <script>
-        const hash = window.location.search;
-        const url = window.location + hash;
-        console.log(url);
-        (new URL(url)).searchParams.forEach((x, y) =>
-            document.getElementById(y).value = x);
+        document.addEventListener('DOMContentLoaded', function(event) {
+            function fill(x, y) {
+                if (document.getElementById(y) != null) {
+                    document.getElementById(y).value = x
+                } else {
+                    const radio = document.getElementById(x);
+                    if(radio != null){
+                    radio.checked = true;
+                    }
+
+                }
+            }
+
+            const hash = window.location.search;
+            const url = window.location + hash;
+
+            (new URL(url)).searchParams.forEach(fill);
+
+        });
+
     </script>
 
 </body>
